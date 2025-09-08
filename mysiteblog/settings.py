@@ -115,7 +115,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+# مسیر فایل‌های static
+STATIC_URL = '/static/'  
+STATICFILES_DIRS = [BASE_DIR / "statics"
+                    ]  # جایی که فایل‌های استاتیک پروژه ذخیره می‌شوند
+STATIC_ROOT = BASE_DIR / "static"     # وقتی collectstatic اجرا می‌شود، همه فایل‌ها اینجا جمع می‌شوند
+
+# مسیر فایل‌های media (آپلودی کاربر)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
